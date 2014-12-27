@@ -1,0 +1,15 @@
+{
+  "name": "MySecrets",
+  "version": "1.0.0",
+  "description": "Store confidential information online that only you can access anywhere.",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.10.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "vpurush",
+  "license": "ISC"
+}
