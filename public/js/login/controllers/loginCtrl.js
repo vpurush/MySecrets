@@ -1,3 +1,6 @@
 ﻿define(['login/module'], function (module) {
-    console.log("module", module);
+    module.controller('loginCtrl', ['$scope', function ($scope) {
+        $scope.username = '';
+        $scope.secret = '';
+    }]);
 });

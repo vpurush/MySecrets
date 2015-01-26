@@ -3,7 +3,12 @@
 app.config = require("./config");
 app.express = require('express');
 app.expressApp = app.express();
-require('./routes')(app);
+app.mongoose = require('mongoose');
+app.mongoose.connect(app.config.db_connection);
+
+app.utils = {
+    encryption: require("./utils/encryption")(app)
+};
 
 var server = app.expressApp.listen(app.config.port, function () {
 
@@ -13,5 +18,15 @@ var server = app.expressApp.listen(app.config.port, function () {
     console.log('Example app listening at http://%s:%s', host, port)
 
 })
+
+app.apis = {
+    userApi: require("./apis/userApi")(app)
+};
+
+app.entities = {
+    user: require("./entities/user")(app)
+}
+
+require('./routes')(app);
 
 module.exports = app;
