@@ -15,6 +15,7 @@
     });
 
     app.expressApp.post("/user", app.apis.userApi.userPOST);
+    app.expressApp.post("/login", app.apis.loginApi.login);
 
 }
 module.exports = configRoutes;

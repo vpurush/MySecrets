@@ -20,7 +20,8 @@ var server = app.expressApp.listen(app.config.port, function () {
 })
 
 app.apis = {
-    userApi: require("./apis/userApi")(app)
+    userApi: require("./apis/userApi")(app),
+    loginApi: require("./apis/loginApi")(app)
 };
 
 app.entities = {

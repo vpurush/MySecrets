@@ -1,1 +1,30 @@
-﻿this is login page
+﻿<div class="container vcenter form-group">
+    <div class="row">
+        <div class="col-md-4 col-md-push-4">
+            <input type="text" placeholder="Username" ng-model="username" class="form-control" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            &nbsp;
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 col-md-push-4">
+            <input type="password" placeholder="Password" ng-model="password" class="form-control" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            &nbsp;
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 col-md-push-4">
+            <button ng-click="GoToSignUp()" class="btn btn-primary">I'm a new user</button>
+        </div>
+        <div class="col-md-1 col-md-push-4">
+            <button ng-click="Login()" class="btn btn-success">Login</button>
+        </div>
+    </div>
+</div>

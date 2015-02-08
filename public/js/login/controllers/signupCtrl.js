@@ -1,6 +1,6 @@
 ﻿define(['login/module'], function (module) {
     console.log("signup cntrl defined");
-    module.controller('signupCtrl', ['$scope', 'userService', function ($scope, userService) {
+    module.controller('signupCtrl', ['$scope', 'userService', '$state', function ($scope, userService, $state) {
         $scope.username = '';
         $scope.password = '';
 
@@ -9,7 +9,7 @@
         }
 
         $scope.GoToLogin = function () {
-            alert('hi');
+            $state.go("login");
         }
     }]);
 });

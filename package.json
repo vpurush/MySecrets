@@ -7,6 +7,7 @@
     "body-parser": "^1.10.2",
     "crypto-js": "^3.1.2-5",
     "express": "^4.10.6",
+    "jsonwebtoken": "^3.2.2",
     "mongoose": "^3.8.22"
   },
   "devDependencies": {},
