@@ -7,7 +7,8 @@ app.mongoose = require('mongoose');
 app.mongoose.connect(app.config.db_connection);
 
 app.utils = {
-    encryption: require("./utils/encryption")(app)
+    encryption: require("./utils/encryption")(app),
+    authentication: require("./utils/authentication")(app)
 };
 
 var server = app.expressApp.listen(app.config.port, function () {
@@ -21,11 +22,14 @@ var server = app.expressApp.listen(app.config.port, function () {
 
 app.apis = {
     userApi: require("./apis/userApi")(app),
-    loginApi: require("./apis/loginApi")(app)
+    loginApi: require("./apis/loginApi")(app),
+    secretApi: require("./apis/secretApi")(app)
 };
 
 app.entities = {
-    user: require("./entities/user")(app)
+    user: require("./entities/user")(app),
+    secret: require("./entities/secret")(app),
+    keyvalue: require("./entities/keyvalue")(app)
 }
 
 require('./routes')(app);

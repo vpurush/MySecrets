@@ -16,6 +16,11 @@
 
     app.expressApp.post("/user", app.apis.userApi.userPOST);
     app.expressApp.post("/login", app.apis.loginApi.login);
+    app.expressApp.get("/secret/", app.utils.authentication.verifyAuthToken, app.apis.secretApi.GetSecretId);
+    app.expressApp.get("/secret/:secretId/keyvalue/", app.utils.authentication.verifyAuthToken, app.apis.secretApi.GetKeyValueList);
+    app.expressApp.post("/secret/:secretId/keyvalue/", app.utils.authentication.verifyAuthToken, app.apis.secretApi.SaveKeyValueList);
+    app.expressApp.get("/secret/:secretId/randomtext/", app.utils.authentication.verifyAuthToken, app.apis.secretApi.GetRandomText);
+    app.expressApp.post("/secret/:secretId/randomtext/", app.utils.authentication.verifyAuthToken, app.apis.secretApi.SaveRandomText);
 
 }
 module.exports = configRoutes;

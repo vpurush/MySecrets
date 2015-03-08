@@ -1,6 +1,4 @@
-﻿var jwt = require('jsonwebtoken');
-
-module.exports = function (app) {
+﻿module.exports = function (app) {
     var loginApi = {};
     
     loginApi.login = function (req, res) {

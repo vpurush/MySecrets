@@ -4,7 +4,8 @@
         'angularjs': '/thirdparty/angularjs/angular',
         'ui-router': '/thirdparty/ui-router/release/angular-ui-router',
         'crypto': '/thirdparty/cryptojs/cryptojs',
-        'ng-resource': '/thirdparty/angular-resource/angular-resource'
+        'ng-resource': '/thirdparty/angular-resource/angular-resource',
+        'underscore': '/thirdparty/underscore/underscore'
     },
     shim: {
         'ui-router': {

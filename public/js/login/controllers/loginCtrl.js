@@ -12,7 +12,8 @@
             userService.Login({ username: $scope.username, password: $scope.password }).then(function (data) {
                 console.log("login reponse ", data);
                 if (data.Success) {
-                    $window.sessionStorage.setItem("Auth-Token", data.Token);
+                    userService.SaveAuthToken(data.Token);
+                    userService.SaveLoggedInUsername($scope.usernam);
                 }
             });
         }

@@ -2,6 +2,7 @@
 var sha256 = cryptoJS.SHA256;
 var aes = cryptoJS.AES;
 var jwt = require('jsonwebtoken');
+var Promise = require('promise');
 
 module.exports = function (app) {
     var encryption = {};
@@ -13,6 +14,18 @@ module.exports = function (app) {
 
     encryption.createJsonWebToken = function (input) {
         return jwt.sign(input, app.config.jwt_private_key);
+    }
+
+    encryption.decryptJsonWebToken = function (token) {
+        return new Promise(function (resolve, reject) {
+            jwt.verify(token, app.config.jwt_private_key, function (err, decoded) {
+                if (err) {
+                    reject(err);
+                    return;
+                }
+                resolve(decoded);
+            });
+        });
     }
 
     return encryption;
